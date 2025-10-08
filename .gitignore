@@ -73,3 +73,6 @@ htmlcov/
 tmp/
 temp/
 *.tmp
+
+output.csv
+output.csv.backup_before_regeneration

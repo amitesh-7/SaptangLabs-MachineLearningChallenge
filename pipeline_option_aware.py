@@ -351,8 +351,9 @@ class OptionAwarePipeline:
         for idx, row in tqdm(test_data.iterrows(), total=len(test_data), desc="Processing"):
             problem = row['problem_statement']
             options = [row[f'answer_option_{i}'] for i in range(1, 6)]
+            topic = row.get('topic', None)  # Get topic if available
             
-            result = self.process_question(idx, problem, options)
+            result = self.process_question(idx, problem, options, topic)
             
             results.append({
                 'id': idx,
